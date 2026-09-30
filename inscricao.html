@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscrição — OpenDay</title>
+<meta name="description" content="Inscreva-se no OpenDay — Lapidação e Avaliação de Diamantes.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22><path d=%22M9 16L24 6L39 16L24 42L9 16Z%22 fill=%22%23D4AF37%22/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="OpenDay — Lapidação e Avaliação de Diamantes" class="logo-img">
+    </a>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="programa.html">Programa</a></li>
+        <li><a href="formadores.html">Formadores</a></li>
+        <li><a href="data-local.html">Data &amp; Local</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="inscricao.html" class="nav-cta">Inscreva-se</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="tag">Inscrição</span>
+      <h1>Garanta o seu lugar no OpenDay.</h1>
+      <p class="breadcrumb"><a href="index.html">Home</a> / Inscrição</p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="grid grid-2" style="align-items:start;gap:50px;">
+        <form id="form-inscricao" class="reveal" novalidate>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome" required autocomplete="name">
+              <span class="field-error" data-error-for="nome"></span>
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone / WhatsApp *</label>
+              <input type="tel" id="telefone" name="telefone" required autocomplete="tel">
+              <span class="field-error" data-error-for="telefone"></span>
+            </div>
+            <div class="field">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span class="field-error" data-error-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="cidade">Cidade *</label>
+              <input type="text" id="cidade" name="cidade" required autocomplete="address-level2">
+              <span class="field-error" data-error-for="cidade"></span>
+            </div>
+            <div class="field">
+              <label for="profissao">Profissão *</label>
+              <input type="text" id="profissao" name="profissao" required>
+              <span class="field-error" data-error-for="profissao"></span>
+            </div>
+            <div class="field full">
+              <label for="empresa">Empresa / Instituição</label>
+              <input type="text" id="empresa" name="empresa">
+            </div>
+            <div class="field full">
+              <label for="interesse">Área de interesse *</label>
+              <select id="interesse" name="interesse" required>
+                <option value="">Seleccione uma opção</option>
+                <option value="Joalheria">Joalheria</option>
+                <option value="Avaliação / Gemologia">Avaliação / Gemologia</option>
+                <option value="Lapidação">Lapidação</option>
+                <option value="Investimento">Investimento</option>
+                <option value="Estudante">Estudante</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <span class="field-error" data-error-for="interesse"></span>
+            </div>
+          </div>
+
+          <p class="form-note" id="vagas-note"><span data-vagas-disponiveis>—</span> vagas disponíveis para esta edição.</p>
+
+          <button type="submit" class="btn btn-gold" id="btn-submit" style="margin-top:22px;">Finalizar Inscrição</button>
+        </form>
+
+        <div class="panel reveal">
+          <h3 style="margin-bottom:10px;">Resumo do evento</h3>
+          <div class="info-list" style="margin-top:8px;">
+            <div class="info-row"><span>Data</span><strong data-evento="data">—</strong></div>
+            <div class="info-row"><span>Horário</span><strong data-evento="horario">—</strong></div>
+            <div class="info-row"><span>Local</span><strong data-evento="local">—</strong></div>
+          </div>
+          <p class="form-note" style="margin-top:16px;">Após submeter, receberá um código de inscrição na página de confirmação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand">
+          <img src="assets/logo.png" alt="OpenDay — Lapidação e Avaliação de Diamantes" class="logo-img">
+        </a>
+        <p style="max-width:34ch;margin-top:14px;">Lapidação e Avaliação de Diamantes — da lapidação ao valor.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <a href="sobre.html">Sobre</a>
+          <a href="programa.html">Programa</a>
+          <a href="formadores.html">Formadores</a>
+          <a href="data-local.html">Data &amp; Local</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a data-contacto="whatsapp" data-contacto-text href="#">WhatsApp</a>
+          <a data-contacto="email" data-contacto-text href="#">E-mail</a>
+          <span data-evento="local">Local</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 OpenDay — Lapidação e Avaliação de Diamantes.</span>
+      <a href="admin.html">Área administrativa</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/inscricao.js"></script>
+</body>
+</html>

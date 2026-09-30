@@ -1,0 +1,77 @@
+OPENDAY — Lapidação e Avaliação de Diamantes
+==============================================
+
+Como abrir
+----------
+Abra "index.html" num browser (ou faça upload de toda a pasta para o
+teu servidor/hosting). Todas as páginas estão ligadas por navegação.
+
+Páginas
+-------
+index.html         Home
+sobre.html          Sobre
+programa.html       Programa
+formadores.html     Formadores
+data-local.html     Data e Local
+inscricao.html      Formulário de inscrição
+confirmacao.html    Confirmação (após inscrever)
+contactos.html      Contactos
+admin.html          Área administrativa
+
+Área administrativa
+--------------------
+URL: admin.html
+Utilizador: admin
+Palavra-passe: openday2026
+
+Na área administrativa podes editar:
+- Formadores (adicionar, editar, remover)
+- Programa (adicionar, editar, remover itens)
+- Data, horário, local e número de vagas
+- Contactos e redes sociais
+- Ver e exportar (CSV) a lista de inscrições
+
+IMPORTANTE — isto é front-end puro
+-----------------------------------
+Todos os dados (formadores, programa, evento, contactos e inscrições)
+ficam guardados no localStorage DO PRÓPRIO BROWSER de quem os edita ou
+se inscreve. Isto significa:
+
+- Alterações feitas no admin só aparecem nesse mesmo browser/computador
+- Inscrições feitas por visitantes ficam apenas no browser deles, não
+  chegam a ti automaticamente
+- A palavra-passe do admin está no código-fonte (js/admin.js), não é
+  segura para produção
+
+Para o site funcionar "a sério" (inscrições centralizadas, admin real,
+vagas partilhadas entre todos os visitantes), o próximo passo é ligar
+um backend (base de dados + servidor) — os ficheiros js/data.js e
+js/admin.js já estão organizados para essa troca ser simples.
+
+Personalizar dados por defeito
+-------------------------------
+Os textos placeholder (datas, local, contactos, formadores) estão em
+js/data.js, dentro de OPENDAY_DEFAULTS — podes editá-los directamente
+aí, ou preferencialmente através da área administrativa.
+
+Já actualizado com dados reais da brochura
+--------------------------------------------
+- Data: 02 de Dezembro de 2026 — Local: Luanda, Angola
+- Contactos: geral@openday.co.ao · +244 936 971 225 · www.openday.co.ao
+- Organização: IOROM — Academia de Formação Mineira
+- Parceiro institucional e técnico: SODIAM, E.P.
+Ainda por definir (continuam como placeholder): horário, duração e
+morada exacta do local.
+
+Logo e banner
+-------------
+- assets/logo.png — logo oficial, usado no cabeçalho, rodapé e admin
+- assets/banner-home.jpg — banner oficial, usado no topo da Home
+
+Página "Brochura" (produto)
+-----------------------------
+produto-brochura.html — acedida a partir do botão "Ver mais" no cartão
+"Formação técnica" da página Sobre. Galeria com as 9 páginas da
+brochura (assets/brochura/page-1.jpg a page-9.jpg, com miniaturas
+thumb-1.jpg a thumb-9.jpg) e botão para descarregar o PDF original
+(assets/brochura/BROCHURA-OPENDAY.pdf, ~55MB).
