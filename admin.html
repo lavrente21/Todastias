@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administração — OpenDay</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22><path d=%22M9 16L24 6L39 16L24 42L9 16Z%22 fill=%22%23D4AF37%22/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+
+<!-- ===================== LOGIN ===================== -->
+<div class="login-shell" id="login-shell">
+  <div class="login-card">
+    <div class="brand">
+      <img src="assets/logo.png" alt="OpenDay — Lapidação e Avaliação de Diamantes" class="logo-img">
+    </div>
+    <h3 style="text-align:center;margin-bottom:22px;font-weight:400;color:var(--silver);">Área administrativa</h3>
+    <form id="form-login">
+      <div class="field" style="margin-bottom:16px;">
+        <label for="admin-user">Utilizador</label>
+        <input type="text" id="admin-user" autocomplete="username" required>
+      </div>
+      <div class="field" style="margin-bottom:10px;">
+        <label for="admin-pass">Palavra-passe</label>
+        <input type="password" id="admin-pass" autocomplete="current-password" required>
+      </div>
+      <span class="field-error" id="login-error"></span>
+      <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:16px;">Entrar</button>
+    </form>
+    <p class="form-note" style="text-align:center;margin-top:18px;">Acesso restrito à organização do OpenDay.</p>
+  </div>
+</div>
+
+<!-- ===================== DASHBOARD ===================== -->
+<div class="admin-shell" id="admin-shell" style="display:none;">
+  <aside class="admin-side">
+    <a href="index.html" class="brand" style="margin-bottom:24px;">
+      <img src="assets/logo.png" alt="OpenDay — Lapidação e Avaliação de Diamantes" class="logo-img">
+    </a>
+    <a href="#" class="admin-nav-link active" data-view="dashboard">Visão geral</a>
+    <a href="#" class="admin-nav-link" data-view="inscricoes">Inscrições</a>
+    <a href="#" class="admin-nav-link" data-view="formadores">Formadores</a>
+    <a href="#" class="admin-nav-link" data-view="programa">Programa</a>
+    <a href="#" class="admin-nav-link" data-view="evento">Data &amp; Local</a>
+    <a href="#" class="admin-nav-link" data-view="contactos">Contactos</a>
+    <a href="#" id="btn-logout" style="margin-top:auto;color:var(--text-muted);">Terminar sessão</a>
+  </aside>
+
+  <main class="admin-main">
+
+    <!-- Visão geral -->
+    <section class="admin-view" data-view="dashboard">
+      <div class="admin-topbar"><h2>Visão geral</h2></div>
+      <div class="stat-grid">
+        <div class="stat"><span>Inscrições</span><strong id="stat-inscricoes">0</strong></div>
+        <div class="stat"><span>Vagas totais</span><strong id="stat-vagas-total">0</strong></div>
+        <div class="stat"><span>Vagas disponíveis</span><strong id="stat-vagas-disp">0</strong></div>
+        <div class="stat"><span>Formadores</span><strong id="stat-formadores">0</strong></div>
+      </div>
+      <div class="admin-card">
+        <h3 style="margin-bottom:14px;">Últimas inscrições</h3>
+        <table class="admin-table" id="tabela-dashboard">
+          <thead><tr><th>Nome</th><th>Cidade</th><th>Interesse</th><th>Código</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Inscrições -->
+    <section class="admin-view" data-view="inscricoes" style="display:none;">
+      <div class="admin-topbar">
+        <h2>Inscrições</h2>
+        <button class="btn btn-ghost" id="btn-export-csv">Exportar CSV</button>
+      </div>
+      <div class="admin-card">
+        <table class="admin-table" id="tabela-inscricoes">
+          <thead><tr><th>Nome</th><th>Contacto</th><th>Cidade</th><th>Profissão</th><th>Interesse</th><th>Código</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Formadores -->
+    <section class="admin-view" data-view="formadores" style="display:none;">
+      <div class="admin-topbar">
+        <h2>Formadores</h2>
+        <button class="btn btn-gold" id="btn-novo-formador">+ Novo formador</button>
+      </div>
+      <div id="lista-formadores"></div>
+    </section>
+
+    <!-- Programa -->
+    <section class="admin-view" data-view="programa" style="display:none;">
+      <div class="admin-topbar">
+        <h2>Programa</h2>
+        <button class="btn btn-gold" id="btn-novo-item-programa">+ Novo item</button>
+      </div>
+      <div id="lista-programa"></div>
+    </section>
+
+    <!-- Evento -->
+    <section class="admin-view" data-view="evento" style="display:none;">
+      <div class="admin-topbar"><h2>Data &amp; Local</h2></div>
+      <form class="admin-card" id="form-evento">
+        <div class="form-grid">
+          <div class="field"><label>Data</label><input type="text" name="data" placeholder="Ex: 14 de Novembro de 2026"></div>
+          <div class="field"><label>Horário</label><input type="text" name="horario" placeholder="Ex: 09:00 — 16:00"></div>
+          <div class="field"><label>Duração</label><input type="text" name="duracao" placeholder="Ex: 1 dia (7 horas)"></div>
+          <div class="field"><label>Vagas totais</label><input type="number" name="vagasTotal" min="0"></div>
+          <div class="field full"><label>Local</label><input type="text" name="local" placeholder="Nome do espaço"></div>
+          <div class="field full"><label>Morada</label><input type="text" name="endereco" placeholder="Morada completa"></div>
+        </div>
+        <button type="submit" class="btn btn-gold" style="margin-top:20px;">Guardar alterações</button>
+      </form>
+    </section>
+
+    <!-- Contactos -->
+    <section class="admin-view" data-view="contactos" style="display:none;">
+      <div class="admin-topbar"><h2>Contactos</h2></div>
+      <form class="admin-card" id="form-contactos">
+        <div class="form-grid">
+          <div class="field"><label>WhatsApp</label><input type="text" name="whatsapp" placeholder="+244 9XX XXX XXX"></div>
+          <div class="field"><label>Telefone</label><input type="text" name="telefone" placeholder="+244 2XX XXX XXX"></div>
+          <div class="field"><label>E-mail</label><input type="email" name="email"></div>
+          <div class="field"><label>Localização (texto)</label><input type="text" name="localizacao"></div>
+          <div class="field"><label>Instagram (URL)</label><input type="text" name="instagram"></div>
+          <div class="field"><label>Facebook (URL)</label><input type="text" name="facebook"></div>
+          <div class="field"><label>LinkedIn (URL)</label><input type="text" name="linkedin"></div>
+        </div>
+        <button type="submit" class="btn btn-gold" style="margin-top:20px;">Guardar alterações</button>
+      </form>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<template id="tpl-formador">
+  <div class="admin-card" data-formador-card>
+    <div class="form-grid">
+      <div class="field"><label>Nome</label><input type="text" data-f="nome"></div>
+      <div class="field"><label>Especialidade</label><input type="text" data-f="especialidade"></div>
+      <div class="field full"><label>Bio</label><textarea rows="2" data-f="bio"></textarea></div>
+      <div class="field full"><label>URL da foto (opcional)</label><input type="text" data-f="foto" placeholder="https://..."></div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:16px;">
+      <button class="icon-btn" data-action="salvar-formador">Guardar</button>
+      <button class="icon-btn danger" data-action="remover-formador">Remover</button>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-programa-item">
+  <div class="admin-card" data-programa-card>
+    <div class="form-grid">
+      <div class="field"><label>Hora</label><input type="text" data-p="hora" placeholder="09:00"></div>
+      <div class="field"><label>Título</label><input type="text" data-p="titulo"></div>
+      <div class="field full"><label>Descrição</label><textarea rows="2" data-p="desc"></textarea></div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:16px;">
+      <button class="icon-btn" data-action="salvar-programa">Guardar</button>
+      <button class="icon-btn danger" data-action="remover-programa">Remover</button>
+    </div>
+  </div>
+</template>
+
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

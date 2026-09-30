@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscrição Confirmada — OpenDay</title>
+<meta name="description" content="A sua inscrição no OpenDay foi confirmada.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22><path d=%22M9 16L24 6L39 16L24 42L9 16Z%22 fill=%22%23D4AF37%22/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="OpenDay — Lapidação e Avaliação de Diamantes" class="logo-img">
+    </a>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="programa.html">Programa</a></li>
+        <li><a href="formadores.html">Formadores</a></li>
+        <li><a href="data-local.html">Data &amp; Local</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="inscricao.html" class="nav-cta">Inscreva-se</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+  <section style="padding-top:150px;">
+    <div class="wrap">
+      <div class="confirm-box reveal in" id="confirm-box">
+        <svg class="check" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="21" stroke="#D4AF37" stroke-width="1.4"/><path d="M15 24l6 6 12-13" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h2>Inscrição realizada com sucesso!</h2>
+        <p style="margin-top:10px;">Guarde o seu código de inscrição — vai precisar dele no dia do evento.</p>
+        <div class="confirm-code" id="codigo-inscricao">—</div>
+
+        <div class="info-list" style="text-align:left;margin-top:20px;">
+          <div class="info-row"><span>Nome</span><strong id="conf-nome">—</strong></div>
+          <div class="info-row"><span>Data do evento</span><strong data-evento="data">—</strong></div>
+          <div class="info-row"><span>Horário</span><strong data-evento="horario">—</strong></div>
+          <div class="info-row"><span>Local</span><strong data-evento="local">—</strong></div>
+        </div>
+
+        <div class="hero-actions" style="justify-content:center;margin-top:30px;">
+          <a href="index.html" class="btn btn-ghost">Voltar à home</a>
+          <button class="btn btn-gold" onclick="window.print()">Imprimir confirmação</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand">
+          <img src="assets/logo.png" alt="OpenDay — Lapidação e Avaliação de Diamantes" class="logo-img">
+        </a>
+        <p style="max-width:34ch;margin-top:14px;">Lapidação e Avaliação de Diamantes — da lapidação ao valor.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <a href="sobre.html">Sobre</a>
+          <a href="programa.html">Programa</a>
+          <a href="formadores.html">Formadores</a>
+          <a href="data-local.html">Data &amp; Local</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a data-contacto="whatsapp" data-contacto-text href="#">WhatsApp</a>
+          <a data-contacto="email" data-contacto-text href="#">E-mail</a>
+          <span data-evento="local">Local</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 OpenDay — Lapidação e Avaliação de Diamantes.</span>
+      <a href="admin.html">Área administrativa</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/confirmacao.js"></script>
+</body>
+</html>
