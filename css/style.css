@@ -88,7 +88,7 @@ p{ margin:0 0 1em; color:var(--silver); font-weight:300; }
 
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand svg{ width:26px; height:26px; flex:none; color:var(--gold); }
-.logo-img{ height:56px; width:auto; display:block; }
+.logo-img{ height:100px; width:auto; display:block; }
 .login-card .logo-img{ height:76px; }
 .admin-side .logo-img{ height:46px; }
 .brand-word{ font-family:var(--font-display); font-size:1.28rem; letter-spacing:.02em; }
