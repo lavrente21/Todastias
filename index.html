@@ -44,10 +44,14 @@
         <span class="tag">Em vídeo</span>
         <h2>Veja o que é o OpenDay</h2>
       </div>
-      <div class="video-frame reveal" id="video-frame" data-video-src="assets/video-diamantes.mp4">
-        <img src="assets/brochura/page-1.jpg" alt="OpenDay — vídeo de apresentação" class="video-poster">
-        <button class="video-play" id="video-play-btn" aria-label="Reproduzir vídeo">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.2"/><path d="M10 8l6 4-6 4V8z" fill="currentColor"/></svg>
+      <div class="video-frame reveal" id="video-frame">
+        <img src="assets/brochura/page-1.jpg" alt="OpenDay — vídeo de apresentação" class="video-poster" id="video-poster">
+        <video id="site-video" class="video-el" autoplay muted loop playsinline style="display:none;">
+          <source src="assets/video-diamantes.mp4" type="video/mp4">
+        </video>
+        <button class="mute-btn" id="mute-btn" aria-label="Activar som" style="display:none;">
+          <svg id="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 5 6 9H3v6h3l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg id="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="display:none;"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>
         </button>
       </div>
       <p class="form-note" id="video-note" style="display:none;text-align:center;margin-top:16px;">O vídeo ainda não foi adicionado a esta secção.</p>

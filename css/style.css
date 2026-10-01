@@ -400,6 +400,15 @@ section{ position:relative; padding:min(11vw,120px) 0; }
 .video-play:hover{ transform:scale(1.08); background:rgba(212,175,55,.3); }
 @media (max-width:640px){ .video-play{ width:62px; height:62px; } .video-play svg{ width:24px; height:24px; } }
 
+.mute-btn{
+  position:absolute; right:16px; bottom:16px; width:44px; height:44px; padding:0;
+  border-radius:50%; border:1.5px solid var(--gold); background:rgba(17,17,17,.55);
+  color:var(--gold-light); display:flex; align-items:center; justify-content:center;
+  cursor:pointer; backdrop-filter:blur(2px); transition:background .25s ease, transform .25s ease;
+}
+.mute-btn:hover{ background:rgba(212,175,55,.25); transform:scale(1.07); }
+.mute-btn svg{ width:20px; height:20px; }
+
 /* -------------------- Admin -------------------- */
 .admin-body{ background:var(--bg); min-height:100vh; }
 .admin-shell{ display:grid; grid-template-columns:230px 1fr; min-height:100vh; }

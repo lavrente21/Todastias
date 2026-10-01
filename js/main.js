@@ -15,39 +15,38 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideoPlayer();
 });
 
-/* Secção de vídeo: troca o poster pelo <video> real ao clicar em Play */
+/* Secção de vídeo: reprodução automática, em loop, só com botão de mute */
 function initVideoPlayer(){
   const frame = document.getElementById('video-frame');
-  const btn = document.getElementById('video-play-btn');
-  if(!frame || !btn) return;
+  const poster = document.getElementById('video-poster');
+  const video = document.getElementById('site-video');
+  const muteBtn = document.getElementById('mute-btn');
   const note = document.getElementById('video-note');
+  if(!frame || !video) return;
 
-  btn.addEventListener('click', () => {
-    const src = frame.getAttribute('data-video-src');
-    const poster = frame.querySelector('.video-poster');
+  const iconMuted = document.getElementById('icon-muted');
+  const iconUnmuted = document.getElementById('icon-unmuted');
 
-    const video = document.createElement('video');
-    video.className = 'video-el';
-    video.controls = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    video.setAttribute('poster', poster.getAttribute('src'));
-    const source = document.createElement('source');
-    source.src = src;
-    source.type = 'video/mp4';
-    video.appendChild(source);
-
-    video.addEventListener('error', () => {
-      video.remove();
-      poster.style.display = 'block';
-      btn.style.display = 'flex';
-      if(note) note.style.display = 'block';
-    });
-
+  video.addEventListener('loadeddata', () => {
     poster.style.display = 'none';
-    btn.style.display = 'none';
-    frame.appendChild(video);
+    video.style.display = 'block';
+    if(muteBtn) muteBtn.style.display = 'flex';
   });
+
+  video.addEventListener('error', () => {
+    video.style.display = 'none';
+    if(muteBtn) muteBtn.style.display = 'none';
+    poster.style.display = 'block';
+    if(note) note.style.display = 'block';
+  });
+
+  if(muteBtn){
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      iconMuted.style.display = video.muted ? 'block' : 'none';
+      iconUnmuted.style.display = video.muted ? 'none' : 'block';
+    });
+  }
 }
 
 /* Header muda de aparência ao rolar */

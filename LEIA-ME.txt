@@ -78,11 +78,11 @@ thumb-1.jpg a thumb-9.jpg) e botão para descarregar o PDF original
 
 Vídeo na Home
 -------------
-Secção "Em vídeo" logo a seguir ao banner, antes de "O evento". Por
-agora mostra uma imagem de capa com botão de play (ainda sem vídeo
-real). Para activar: coloca o teu ficheiro de vídeo em
-assets/video-diamantes.mp4 — o botão já está preparado para o
-reproduzir automaticamente a partir desse caminho.
+Secção "Em vídeo" logo a seguir ao banner, antes de "O evento".
+Reproduz automaticamente em loop e sem som (autoplay muted) assim que
+o ficheiro assets/video-diamantes.mp4 existir — só aparece um botão
+de activar/desactivar som no canto do vídeo, sem mais controlos.
+Enquanto o ficheiro não existir, mostra a imagem de capa.
 
 QR code na confirmação
 ------------------------
