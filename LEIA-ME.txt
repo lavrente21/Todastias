@@ -75,3 +75,17 @@ produto-brochura.html — acedida a partir do botão "Ver mais" no cartão
 brochura (assets/brochura/page-1.jpg a page-9.jpg, com miniaturas
 thumb-1.jpg a thumb-9.jpg) e botão para descarregar o PDF original
 (assets/brochura/BROCHURA-OPENDAY.pdf, ~55MB).
+
+Vídeo na Home
+-------------
+Secção "Em vídeo" logo a seguir ao banner, antes de "O evento". Por
+agora mostra uma imagem de capa com botão de play (ainda sem vídeo
+real). Para activar: coloca o teu ficheiro de vídeo em
+assets/video-diamantes.mp4 — o botão já está preparado para o
+reproduzir automaticamente a partir desse caminho.
+
+QR code na confirmação
+------------------------
+Depois de uma inscrição, a página confirmacao.html mostra um QR code
+gerado a partir do código de inscrição (via api.qrserver.com — requer
+internet para aparecer).

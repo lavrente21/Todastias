@@ -12,7 +12,43 @@ document.addEventListener('DOMContentLoaded', () => {
   renderContactos();
   renderFormadores();
   renderPrograma();
+  initVideoPlayer();
 });
+
+/* Secção de vídeo: troca o poster pelo <video> real ao clicar em Play */
+function initVideoPlayer(){
+  const frame = document.getElementById('video-frame');
+  const btn = document.getElementById('video-play-btn');
+  if(!frame || !btn) return;
+  const note = document.getElementById('video-note');
+
+  btn.addEventListener('click', () => {
+    const src = frame.getAttribute('data-video-src');
+    const poster = frame.querySelector('.video-poster');
+
+    const video = document.createElement('video');
+    video.className = 'video-el';
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.setAttribute('poster', poster.getAttribute('src'));
+    const source = document.createElement('source');
+    source.src = src;
+    source.type = 'video/mp4';
+    video.appendChild(source);
+
+    video.addEventListener('error', () => {
+      video.remove();
+      poster.style.display = 'block';
+      btn.style.display = 'flex';
+      if(note) note.style.display = 'block';
+    });
+
+    poster.style.display = 'none';
+    btn.style.display = 'none';
+    frame.appendChild(video);
+  });
+}
 
 /* Header muda de aparência ao rolar */
 function initHeader(){
